@@ -12,7 +12,7 @@ router.get('/', function(req, res, next) {
     } else {
       res.render('index', { "classes": classes});
     }
-  },3);
+});
 
 });
 

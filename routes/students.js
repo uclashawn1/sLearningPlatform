@@ -25,7 +25,7 @@ router.post('/classes/register', function(req, res){
 
     Student.register(info, function(err, student){
         if(err) throw err;
-        console.log(student);
+        // console.log(student);
     });
 
     req.flash('succes', 'You are now registered');

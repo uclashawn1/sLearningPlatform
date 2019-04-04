@@ -3,8 +3,11 @@ var router = express.Router();
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 
+
 var User = require('../models/user');
+
 var Student = require('../models/student');
+
 var Instructor = require('../models/instructor');
 
 /* GET users listing. */
@@ -46,7 +49,7 @@ router.post('/signup', function(req, res, next) {
     req.checkBody('password2', 'Passwords do not match').equals(req.body.password);
 
     var errors = req.validationErrors();
-
+    var flag=0;
     if (errors){
           res.render('users/signup', {
               errors: errors,
@@ -99,15 +102,16 @@ router.post('/signup', function(req, res, next) {
         if(type == 'student'){
             User.saveStudent(newUser, newStudent, function(err, user){
                 console.log('Student created');
+                flag=1;
             });
         } else {
           User.saveInstructor(newUser, newInstructor, function(err, user){
               console.log('Instructor created');
+              flag=1;
           });
         }
-
-        req.flash('success', 'User added');
-        res.redirect('/');
+            req.flash('success', "User added !");
+            res.redirect('/');
     }
 });
 
@@ -127,7 +131,7 @@ router.post('/login', passport.authenticate('local', {
                                           }
       ), function(req, res){
           console.log('Authentication Successful');
-          req.flash('success', 'You are now logged in');
+          req.flash('success', "You are now logged in");
           var usertype = req.user.type;
           res.redirect('/' + usertype + 's/classes');
 });
@@ -135,15 +139,15 @@ router.post('/login', passport.authenticate('local', {
 passport.use(new LocalStrategy(
     function(username, password, done){
 
-      console.log("username: " + username);
-      console.log("password: " + password);
+      // console.log("username: " + username);
+      // console.log("password: " + password);
 
       User.getUserByUsername(username, function(err, user){
 
           if (err) throw err;
 
           if(!user){
-            console.log("Unknown user " + username);
+            // console.log("Unknown user " + username);
             return done(null, false, { message: 'Unknown user ' + username });
           }
 
@@ -165,7 +169,10 @@ passport.use(new LocalStrategy(
       });
     }
 ));
-
+// app.get('/sign-in', function(req, res) {
+//         res.render("signin.handlebars", {layout: 'users.handlebars', action: 'Sign in', ***error: req.flash('error')***,
+//                     csrf: 'CSRF token goes here' });
+//     })
 router.get('/logout', function(req, res){
     req.logout();
     req.flash('success', "You have logged out");

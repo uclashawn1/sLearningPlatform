@@ -1,7 +1,6 @@
 var mongoose = require('mongoose');
 
 // Instructor Schema
-
 var instructorSchema = mongoose.Schema({
   first_name: {
     type: String
@@ -27,7 +26,7 @@ var instructorSchema = mongoose.Schema({
   }]
 });
 
-var Instructor =  module.exports = mongoose.model('Instructor', instructorSchema);
+var Instructor =  module.exports = mongoose.model('instructor', instructorSchema);
 
 
 // Fetch Single Class

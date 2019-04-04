@@ -12,7 +12,7 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var mongo = require('mongodb');
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/slearning');
+mongoose.connect(process.env.MONGODB_URI ||'mongodb://localhost/elearn');
 var db = mongoose.connection;
 async = require('async');
 
@@ -41,6 +41,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
 
 app.use(session({
   secret: 'secret',
@@ -74,18 +75,19 @@ app.use(expressValidator({
 app.use(flash());
 
 app.use(function(req, res, next){
-  res.locals.messages = require('express-messages')(req, res);
-
-  if(req.url == '/'){
+    res.locals.messages= require('express-messages')(req,res)();
+    if(req.url == '/'){
     res.locals.isHome = true;
   }
   next();
 });
 
+//Make the user object global in all views
 app.get('*', function(req, res, next){
+    // put user into res.locals for easy access from templates
     res.locals.user = req.user || null;
     if(req.user){
-      res.locals.usertype = req.user.type;
+      res.locals.type = req.user.type;
     }
     next();
 });
@@ -111,9 +113,9 @@ if (app.get('env') === 'development') {
   app.use(function(err, req, res, next) {
     console.error(err.stack);
     res.status(err.status || 500);
-    res.render('error', {
-      message: err.message,
-      error: err
+    res.render('error',{
+        message: err.message,
+        error:err
     });
   });
 }

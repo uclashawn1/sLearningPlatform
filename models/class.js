@@ -21,7 +21,6 @@ var classSchema = mongoose.Schema({
 
 var Class =  module.exports = mongoose.model('Class', classSchema);
 
-
 // Fetch All Classes
 module.exports.getClasses = function(callback, limit){
     Class.find(callback).limit(limit);

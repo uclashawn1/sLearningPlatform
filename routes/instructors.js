@@ -12,7 +12,7 @@ router.get('/classes', ensureAuthenticated, function(req, res, next) {
       console.log(err);
       res.send(err);
     } else {
-      console.log('router.get(/classes... ' + instructor);
+      // console.log('router.get(/classes... ' + instructor);
       res.render('instructors/classes', { "instructor": instructor});
     }
   });

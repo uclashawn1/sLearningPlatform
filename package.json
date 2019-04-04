@@ -9,6 +9,9 @@
     "type": "git",
     "url": "https://github.com/uclashawn1/sLearningPlatform"
   },
+  "engines": {
+    "node": "*"
+  },
   "dependencies": {
     "async": "^1.4.2",
     "bcryptjs": "^2.3.0",
