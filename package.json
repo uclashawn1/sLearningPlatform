@@ -10,7 +10,7 @@
     "url": "git+https://github.com/uclashawn1/sLearningPlatform.git"
   },
   "engines": {
-    "node": "*"
+    "node": "~10.15.3"
   },
   "dependencies": {
     "async": "*",
@@ -27,12 +27,13 @@
     "handlebars": "*",
     "jade": "*",
     "mongodb": "*",
-    "mongoose": "*",
+    "mongoose": "^5.4.22",
     "morgan": "*",
     "passport": "*",
     "passport-http": "*",
     "passport-local": "*",
-    "serve-favicon": "*"
+    "serve-favicon": "*",
+    "validator": "^10.11.0"
   },
   "author": "Lashawn",
   "license": "MIT",

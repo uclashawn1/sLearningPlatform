@@ -10,9 +10,17 @@ var flash = require('connect-flash');
 var session = require('express-session');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
-var mongo = require('mongodb');
+var mongodb = require('mongodb');
+var MongoClient = require('mongodb').MongoClient;
 var mongoose = require('mongoose');
-mongoose.connect(process.env.MONGODB_URI ||'mongodb://localhost/elearn');
+MongoClient.connect(process.env.MONGODB_URI, {useNewUrlParser: true} || 'mongodb://localhost/elearn', {useNewUrlParser: true},
+function(err, database){
+  if(err) throw err;
+
+  mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser: true} ||'mongodb://localhost/elearn', {useNewUrlParser: true});
+  db = mongoose.connection;
+});
+
 var db = mongoose.connection;
 async = require('async');
 
