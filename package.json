@@ -5,6 +5,10 @@
   "scripts": {
     "start": "node ./bin/www"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uclashawn1/sLearningPlatform"
+  },
   "dependencies": {
     "async": "^1.4.2",
     "bcryptjs": "^2.3.0",
@@ -27,8 +31,7 @@
     "passport-local": "^1.0.0",
     "serve-favicon": "~2.3.0"
   },
-  "main": "app.js",
-  "author": "",
+  "author": "Lashawn",
   "license": "MIT",
   "description": ""
 }
