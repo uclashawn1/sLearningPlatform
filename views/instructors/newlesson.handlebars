@@ -1,4 +1,6 @@
 <h2>Add Lesson</h2>
+
+
 <form id="regForm" method="post" action="/instructors/classes/{{class_id}}/lessons/new">
   <div>
     <label>Lesson Number: </label>
@@ -13,6 +15,23 @@
     <textarea  name="lesson_body"></textarea>
   </div>
   <div>
+    <label>Lesson Video: </label>
+    <input type="url" name="url" id="url"
+      placeholder="https://example.com"
+      pattern="https://.*" size="30">
+    <input type="file" name="video" accept="video/*">
+  </div>
+  <div>
     <input type="submit" value="Submit">
   </div>
 </form>
+
+
+
+{{!-- <form id="regForm" method="post" action="/instructors/classes/{{class_id}}/lessons/new/action_page.php">
+  <div>
+    <input type="file" name="video" accept="video/*">
+    <input type="submit">
+  </div>
+</form> --}}
+

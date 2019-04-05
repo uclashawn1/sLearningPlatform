@@ -48,6 +48,8 @@ router.post('/classes/:id/lessons/new', ensureAuthenticated, function(req, res, 
       info['lesson_number']   = req.body.lesson_number;
       info['lesson_title']    = req.body.lesson_title;
       info['lesson_body']     = req.body.lesson_body;
+      info['url']             = req.body.url;
+      info['video']           = req.body.video;
 
       Class.addLesson(info, function(err, lesson){
           console.log('Lesson Added');
