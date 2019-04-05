@@ -44,6 +44,12 @@ router.get('/:id/lessons', function(req, res, next) {
   });
 });
 
+function ensureAuthenticated(req, res, next){
+  if (req.isAuthenticated()){
+      return next();
+  }
+  res.redirect('/');
+}
 
 router.get('/:id/lessons/:lesson_id', ensureAuthenticated, function(req, res, next) {
   Class.getClassById([req.params.id], function(err, classname){
@@ -67,11 +73,6 @@ router.get('/:id/lessons/:lesson_id', ensureAuthenticated, function(req, res, ne
   }});
 });
 
-function ensureAuthenticated(req, res, next){
-  if (req.isAuthenticated()){
-      return next();
-  }
-  res.redirect('/');
-}
+
 
 module.exports = router;

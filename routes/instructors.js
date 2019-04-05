@@ -5,6 +5,12 @@ Class = require('../models/class');
 Instructor = require('../models/instructor');
 User = require('../models/user');
 
+function ensureAuthenticated(req, res, next){
+  if (req.isAuthenticated()){
+      return next();
+  }
+  res.redirect('/');
+}
 
 router.get('/classes', ensureAuthenticated, function(req, res, next) {
   Instructor.getInstructorByUsername(req.user.username, function(err, instructor){
@@ -61,11 +67,6 @@ router.post('/classes/:id/lessons/new', ensureAuthenticated, function(req, res, 
 
 
 
-function ensureAuthenticated(req, res, next){
-  if (req.isAuthenticated()){
-      return next();
-  }
-  res.redirect('/');
-}
+
 
 module.exports = router;

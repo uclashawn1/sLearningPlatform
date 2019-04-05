@@ -5,6 +5,12 @@ Class = require('../models/class');
 Student = require('../models/student');
 User = require('../models/user');
 
+function ensureAuthenticated(req, res, next){
+  if (req.isAuthenticated()){
+      return next();
+  }
+  res.redirect('/');
+}
 
 router.get('/classes', ensureAuthenticated, function(req, res, next) {
   Student.getStudentByUsername(req.user.username, function(err, student){
@@ -33,11 +39,6 @@ router.post('/classes/register', function(req, res){
 
 });
 
-function ensureAuthenticated(req, res, next){
-  if (req.isAuthenticated()){
-      return next();
-  }
-  res.redirect('/');
-}
+
 
 module.exports = router;
