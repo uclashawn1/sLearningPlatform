@@ -13,7 +13,7 @@ router.get('/classes', ensureAuthenticated, function(req, res, next) {
       res.send(err);
     } else {
       // console.log('router.get(/classes... ' + instructor);
-      res.render('instructors/classes', { "instructor": instructor});
+      res.render('/instructors/classes', { "instructor": instructor});
     }
   });
 });
@@ -29,14 +29,14 @@ router.post('/classes/register', function(req, res){
         console.log(instructor);
     });
 
-    req.flash('succes', 'You are now registered to teach this class');
+    req.flash('success', 'You are now registered to teach this class');
     res.redirect('/instructors/classes');
 
 });
 
 
 router.get('/classes/:id/lessons/new', ensureAuthenticated, function(req, res, next) {
-      res.render('instructors/newlesson', { "class_id": req.params.id});
+      res.render('/instructors/newlesson', { "class_id": req.params.id});
 });
 
 
