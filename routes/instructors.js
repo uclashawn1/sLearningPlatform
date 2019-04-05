@@ -61,7 +61,7 @@ router.post('/classes/:id/lessons/new', ensureAuthenticated, function(req, res, 
           console.log('Lesson Added');
       });
 
-      req.flash('succes', 'Lesson Added');
+      req.flash('success', 'Lesson Added');
       res.redirect('/instructors/classes');
 });
 
