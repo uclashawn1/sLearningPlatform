@@ -65,7 +65,7 @@ button[disabled],.disabled:active{-webkit-box-shadow:none;-moz-box-shadow:none;b
 button,
 input[type="submit"],
 input[type="reset"],
-input[type="button"]{*padding:7px 15px;}/*IE 7 ONLY*/
+input[type="button"]{padding:5px 10px; *padding:7px 15px;}/*IE 7 ONLY*/
 
 	a.btn,a.button{}/*overrides*/
 	button.small, a.btn.small, a.button.small{font-size:0.8em;padding:5px 10px;}
