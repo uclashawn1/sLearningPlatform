@@ -1,63 +1,67 @@
 var mongoose = require('mongoose');
-var bcrypt = require('bcryptjs');
+var bcrypt   = require('bcryptjs');
 
 // User Schema
-var UserSchema = mongoose.Schema({
-	username: {
-		type: String
-	},
-	email: {
-		type: String
-	},
-	password:{
-		type:String,
-		bcrypt: true
-	},
-	type:{
-		type:String
-	}
-	
+var userSchema = mongoose.Schema({
+  username: {
+    type: String
+  },
+  email: {
+    type: String
+  },
+  password:{
+    type: String,
+    bcrypt: true
+  },
+  type:{
+    type: String
+  }
 });
 
-var User = module.exports = mongoose.model('User', UserSchema);
+var User =  module.exports = mongoose.model('User', userSchema);
 
-// Get User By Id
+// Fetch User By Id
 module.exports.getUserById = function(id, callback){
-	User.findById(id, callback);
-}
+    User.findById(id, callback);
+};
 
-// Get User by Username
+// Fetch Single User by Username
 module.exports.getUserByUsername = function(username, callback){
-	var query = {username: username};
-	User.findOne(query, callback);
-}
+    var query = {username: username};
+    User.findOne(query, callback);
+};
 
-// Compare password
-module.exports.comparePassword = function(candidatePassword, hash, callback){
-	bcrypt.compare(candidatePassword, hash, function(err, isMatch){
-		if(err) throw err;
-		callback(null, isMatch);
-	});
-}
-
-// Create Student User
+// Save Student
 module.exports.saveStudent = function(newUser, newStudent, callback){
-	bcrypt.hash(newUser.password, 10, function(err, hash){
-		if(err) throw errl
-		// Set hash
-		newUser.password = hash;
-		console.log('Student is being saved');
-		async.parallel([newUser.save, newStudent.save], callback);
-	});
-}
+    bcrypt.hash(newUser.password, 10, function(err, hash){
+        if(err) throw err;
 
-// Create Instructor User
+        newUser.password = hash;
+        console.log('Student is being saved');
+        async.parallel([(callback)=>newUser.save(callback), (callback)=>newStudent.save(callback)], callback);
+
+    });
+};
+
+// Save Instructor
 module.exports.saveInstructor = function(newUser, newInstructor, callback){
-	bcrypt.hash(newUser.password, 10, function(err, hash){
-		if(err) throw errl
-		// Set hash
-		newUser.password = hash;
-		console.log('Instructor is being saved');
-		async.parallel([newUser.save, newInstructor.save], callback);
-	});
-}
+    bcrypt.hash(newUser.password, 10, function(err, hash){
+        if(err) throw errl
+
+        newUser.password = hash;
+        console.log('Instructor is being saved');
+        async.parallel([newUser.save.bind(newUser), newInstructor.save.bind(newInstructor)], callback);
+
+    });
+};
+
+// comparePassword
+module.exports.comparePassword = function(candidatePassword, hash, callback){
+    bcrypt.compare(candidatePassword, hash, function(err, isMatch){
+        if(err){
+          throw errl
+        }
+
+        callback(null, isMatch);
+    });
+};
