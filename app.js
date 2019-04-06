@@ -13,13 +13,26 @@ var LocalStrategy = require('passport-local').Strategy;
 var mongodb = require('mongodb');
 var MongoClient = require('mongodb').MongoClient;
 var mongoose = require('mongoose');
-MongoClient.connect('mongodb://localhost/slearning', {useNewUrlParser: true} || process.env.MONGODB_URI, {useNewUrlParser: true},
-function(err){
+
+// MongoClient.connect('mongodb://localhost/slearning', {useNewUrlParser: true} || process.env.MONGODB_URI, {useNewUrlParser: true},
+// function(err){
+//   if(err) throw err;
+//   console.log('mongoClient connection');
+//   mongoose.connect('mongodb://localhost/slearning', {useNewUrlParser: true} || process.env.MONGODB_URI, {useNewUrlParser: true});
+//   console.log('mongooseClient connection');
+//   db = mongoose.connection;
+// });
+MongoClient.connect('mongodb://localhost/slearning', {useNewUrlParser: true}, function(err){
   if(err) throw err;
-  console.log('mongoClient connection');
-  mongoose.connect('mongodb://localhost/slearning', {useNewUrlParser: true} || process.env.MONGODB_URI, {useNewUrlParser: true});
-  console.log('mongooseClient connection');
   db = mongoose.connection;
+  mongoose.connect('mongodb://localhost/slearning' || process.env.MONGODB_URI, {useNewUrlParser: true}, (err) => {
+    if(err) {
+      console.error(err);
+    } else {
+      console.log('connected');
+    }
+  });
+  console.log("Listening Now");
 });
 
 var db = mongoose.connection;
