@@ -14,13 +14,13 @@ var mongodb = require('mongodb');
 var MongoClient = require('mongodb').MongoClient;
 var mongoose = require('mongoose');
 
-MongoClient.connect('mongodb://localhost/slearning' || process.env.MONGODB_URI, {useNewUrlParser: true}, function(err, connection){
+MongoClient.connect('mongodb://localhost/slearningplatform' || process.env.MONGODB_URI, {useNewUrlParser: true}, function(err, connection){
   connection = mongoose.connection;
   
   if(err) throw err;
-    mongoose.connect('mongodb://localhost/slearning' || process.env.MONGODB_URI, {useNewUrlParser: true})
+    mongoose.connect('mongodb://localhost/slearningplatform' || process.env.MONGODB_URI, {useNewUrlParser: true})
     .then(function() {
-      connection.openUri('mongodb://localhost/slearning' || process.env.MONGODB_URI, {useNewUrlParser: true});
+      connection.openUri('mongodb://localhost/slearningplatform' || process.env.MONGODB_URI, {useNewUrlParser: true});
       // console.log("Listening Now");
     })
 });
