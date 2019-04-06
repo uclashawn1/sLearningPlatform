@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-Class = require('../models/class');
+Class = require('../models/class.js');
 
 
 router.get('/', function(req, res, next) {

@@ -4,7 +4,7 @@ var router = express.Router();
 Class = require('../models/class');
 
 
-router.get('/', function(req, res, next) {
+router.get('/index', function(req, res, next) {
   Class.getClasses(function(err, classes){
     if(err){
       console.log(err);
