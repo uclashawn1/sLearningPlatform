@@ -1,4 +1,5 @@
 var express = require('express');
+require('dotenv').config()
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -27,12 +28,9 @@ MongoClient.connect('mongodb://localhost/slearningplatform' || process.env.MONGO
     })
  
   db = mongoose.connection;
-  app = express();
-  
-    
+  app = express();  
 });
 
-var db;
 async = require('async');
 
 

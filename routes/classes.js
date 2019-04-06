@@ -61,7 +61,7 @@ router.get('/:id/lessons/:lesson_id', ensureAuthenticated, function(req, res, ne
     } else {
 
         for(i=0;i<classname.lessons.length;i++){
-            if(classname.lessons[i].lesson_number== req.params.lesson_id){
+            if(classname.lessons[i].lesson_number == req.params.lesson_id){
                 lesson = classname.lessons[i];
                 // console.log('lesson ' + lesson);
             }

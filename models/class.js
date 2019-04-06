@@ -16,8 +16,8 @@ var classSchema = mongoose.Schema({
     lesson_number: {type: Number},
     lesson_title: {type: String},
     lesson_body:{type: String},
-    url:{type: Object},
-    video:{type: Object}
+    // url:{type: Object},
+    // video:{type: Object}
   }]
 });
 
@@ -39,8 +39,7 @@ module.exports.addLesson = function(info, callback){
     lesson_number = info['lesson_number'];
     lesson_title  = info['lesson_title'];
     lesson_body   = info['lesson_body'];
-    url           = info['url'];
-    video         = info['video'];
+
 
     Class.findByIdAndUpdate(class_id,{
         $push:{"lessons": {
