@@ -13,15 +13,19 @@ var LocalStrategy = require('passport-local').Strategy;
 var mongodb = require('mongodb');
 var MongoClient = require('mongodb').MongoClient;
 var mongoose = require('mongoose');
-MongoClient.connect(process.env.MONGODB_URI, {useNewUrlParser: true} || 'mongodb://localhost/elearn', {useNewUrlParser: true},
-function(err, database){
-  if(err) throw err;
 
-  mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser: true} ||'mongodb://localhost/elearn', {useNewUrlParser: true});
-  db = mongoose.connection;
+MongoClient.connect('mongodb://localhost/slearning' || process.env.MONGODB_URI, {useNewUrlParser: true}, function(err, connection){
+  connection = mongoose.connection;
+  
+  if(err) throw err;
+    mongoose.connect('mongodb://localhost/slearning' || process.env.MONGODB_URI, {useNewUrlParser: true})
+    .then(function() {
+      connection.openUri('mongodb://localhost/slearning' || process.env.MONGODB_URI, {useNewUrlParser: true});
+      console.log("Listening Now");
+    })
 });
 
-var db = mongoose.connection;
+
 async = require('async');
 
 
