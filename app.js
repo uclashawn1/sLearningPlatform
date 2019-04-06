@@ -21,7 +21,7 @@ MongoClient.connect('mongodb://localhost/slearning' || process.env.MONGODB_URI, 
     mongoose.connect('mongodb://localhost/slearning' || process.env.MONGODB_URI, {useNewUrlParser: true})
     .then(function() {
       connection.openUri('mongodb://localhost/slearning' || process.env.MONGODB_URI, {useNewUrlParser: true});
-      console.log("Listening Now");
+      // console.log("Listening Now");
     })
 });
 
