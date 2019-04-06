@@ -14,19 +14,24 @@ var mongodb = require('mongodb');
 var MongoClient = require('mongodb').MongoClient;
 var mongoose = require('mongoose');
 
-MongoClient.connect('mongodb://localhost/slearningplatform' || process.env.MONGODB_URI, {useNewUrlParser: true}, function(err, connection){
-  connection = mongoose.connection;
+MongoClient.connect('mongodb://localhost/slearningplatform' || process.env.MONGODB_URI, {useNewUrlParser: true}, function(err){
+  
   
   if(err) throw err;
-    mongoose.connect('mongodb://localhost/slearningplatform' || process.env.MONGODB_URI, {useNewUrlParser: true})
-    .then(function() {
-      connection.openUri('mongodb://localhost/slearningplatform' || process.env.MONGODB_URI, {useNewUrlParser: true});
-      // console.log("Listening Now");
-      async = require('async');
-    })
+  console.log('first listen');
+
+  // mongoose.connect('mongodb://localhost/slearningplatform' || process.env.MONGODB_URI, {useNewUrlParser: true}, 
+  // function(error) {
+  //   if (error) {
+  //     console.log('new error');
+  //   } else {
+  //   console.log('second listen');
+  //   }
+  // });
+    
 });
 
-
+var db = MongoClient.connection;
 async = require('async');
 
 
