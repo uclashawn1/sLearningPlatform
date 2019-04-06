@@ -43,5 +43,6 @@
   },
   "homepage": "https://github.com/uclashawn1/sLearningPlatform#readme",
   "main": "app.js",
-  "keywords": []
+  "keywords": [],
+  "devDependencies": {}
 }

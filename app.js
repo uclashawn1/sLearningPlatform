@@ -9,23 +9,16 @@ var expressValidator = require('express-validator');
 var flash = require('connect-flash');
 var session = require('express-session');
 var passport = require('passport');
-var LocalStrategy = require('passport-local'),Strategy;
-var mongo = require('mongodb');
-var mongoose = require('mongoose');
-mongoose.set('useNewUrlParser', true);
-mongoose.connect('mongodb://localhost/slearning' || process.env.MONGODB_URI);
-var db = mongoose.connection;
-
+var LocalStrategy = require('passport-local').Strategy;
+var mongodb = require('mongodb');
 var MongoClient = require('mongodb').MongoClient;
-MongoClient.set('useNewUrlParser', true);
-
-
-MongoClient.connect('mongodb://localhost/slearning', process.env.MONGODB_URI,
-function(err, db){
+var mongoose = require('mongoose');
+MongoClient.connect('mongodb://localhost/slearning', {useNewUrlParser: true} || process.env.MONGODB_URI, {useNewUrlParser: true},
+function(err){
   if(err) throw err;
-  console.log('first listen');
-
-  mongoose.connect('mongodb://localhost/slearning', process.env.MONGODB_URI);
+  console.log('mongoClient connection');
+  mongoose.connect('mongodb://localhost/slearning', {useNewUrlParser: true} || process.env.MONGODB_URI, {useNewUrlParser: true});
+  console.log('mongooseClient connection');
   db = mongoose.connection;
 });
 
