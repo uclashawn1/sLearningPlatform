@@ -169,10 +169,8 @@ passport.use(new LocalStrategy(
       });
     }
 ));
-// app.get('/sign-in', function(req, res) {
-//         res.render("signin.handlebars", {layout: 'users.handlebars', action: 'Sign in', ***error: req.flash('error')***,
-//                     csrf: 'CSRF token goes here' });
-//     })
+
+
 router.get('/logout', function(req, res){
     req.logout();
     req.flash('success', "You have logged out");

@@ -22,6 +22,7 @@ MongoClient.connect('mongodb://localhost/slearningplatform' || process.env.MONGO
     .then(function() {
       connection.openUri('mongodb://localhost/slearningplatform' || process.env.MONGODB_URI, {useNewUrlParser: true});
       // console.log("Listening Now");
+      async = require('async');
     })
 });
 
