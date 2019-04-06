@@ -45,7 +45,7 @@ body{
 margin:0;
 padding:0 0 0 0;
 color:#000;
-background:#efefef url(img/gray_jean.png);
+background:#efefef url(css/img/gray_jean.png);
 font:normal 0.9em/150% 'Arimo', arial, verdana, sans-serif;
 text-shadow: 0 0 1px transparent; /* google font pixelation fix */
 }
@@ -154,40 +154,7 @@ margin:30px 0;
 display:block;
 }
 
-.block{
-	background: #f4f4f4;
-	border: 1px #ccc solid;
-	padding: 10px;
-	margin-bottom: 20px;
-}
-
 form label{
 	display:inline-block;
-	width: 180px;
-}
-
-ul.error li, ul.info li, ul.success li{
-    margin:20px 0 20px 0;
-    padding: 15px;
-    border:1px solid transparent;
-    border-radius:4px;
-    list-style: none;
-}
-
-ul.error li{
-    color:#a94442;
-    background-color:#f2dede;
-    border-color: #ebccd1;
-}
-
-ul.info li{
-    color:#31708f;
-    background-color:#d9edf7;
-    border-color: #bce8f1;
-}
-
-ul.success li{
-    color:#3c763d;
-    background-color:#dff0d8;
-    border-color: #d6e9c6;
+	width:180px;
 }

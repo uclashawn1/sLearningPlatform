@@ -125,20 +125,6 @@ box-sizing: border-box;
 	-webkit-box-shadow: 0 0 7px #6DB9FF;
 	-moz-box-shadow   : 0 0 7px #6DB9FF;
 	box-shadow        : 0 0 7px #6DB9FF;
-	border: none;
-	outline: none;
-	}
-/* Changed to show only when tab is used */
-	input[type="text"]:focus-visible,
-	textarea:focus-visible,
-	button:focus-visible,
-	a.button:focus-visible,
-	select:focus-visibe,
-	input[type="file"]:focus-visible,
-	input[type="password"]:focus-visible{
-	-webkit-box-shadow: 0 0 7px #6DB9FF;
-	-moz-box-shadow   : 0 0 7px #6DB9FF;
-	box-shadow        : 0 0 7px #6DB9FF;
 	border: 1px solid #50B1FE;
 	outline: none;
 	}

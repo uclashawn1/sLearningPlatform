@@ -1,16 +1,12 @@
 <!DOCTYPE html>
 <html>
-	<head>
-	<title>Available Classes</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	<meta name="description" content="" />
-	<meta name="copyright" content="" />
-	<link rel="stylesheet" type="text/css" href="/stylesheets/kickstart.css" media="all" />                  <!-- KICKSTART -->
-	<link rel="stylesheet" type="text/css" href="/stylesheets/style.css" media="all" />                          <!-- CUSTOM STYLES -->
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script type="text/javascript" src="/javascripts/kickstart.js"></script>                                  <!-- KICKSTART -->
-	</head>
+<head>
+<title>Elearn</title>
+<link rel="stylesheet" type="text/css" href="/stylesheets/kickstart.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/stylesheets/style.css" media="all" />                 
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="/javascripts/kickstart.js"></script>                       
+</head>
 <body>
 
 <!-- Menu Horizontal -->
@@ -20,11 +16,6 @@
 </ul>
 
 <div class="grid">
-
-
-
-
-<!-- ===================================== END HEADER ===================================== -->
 <div class="col_12">
 	<div class="col_9">
 		{{#if success_msg}}
@@ -59,39 +50,8 @@
 
 </div><!-- END GRID -->
 
-
-
-{{!-- <div class="col_12">
-	<div class="col_9">
-		{{{messages}}}
-			{{#if errors}}
-				{{#each errors}}
-					<div class="notice error"><i class="icon-remove-sign icon-large"></i>
-						{{msg}}
-						<a href="#close" class="icon-remove"></a>
-					</div>
-				{{/each}}
-			{{/if}}
-		{{{body}}}
-	</div>
-
-	<div class="col_3">
-		{{>login}}
-	</div>
-
-	<hr />
-
-	{{#if isHome}}
-		{{>classes}}
-	{{/if}}
-</div>
-
-</div><!-- END GRID --> --}}
-
 <!-- ===================================== START FOOTER ===================================== -->
 <div class="clear"></div>
-<div id="footer">
-&copy; Copyright 2017–2018 All Rights Reserved. 
-</div>
+
 
 </body></html>

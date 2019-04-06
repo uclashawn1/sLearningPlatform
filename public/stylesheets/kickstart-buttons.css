@@ -52,7 +52,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', end
 background: linear-gradient(top, rgba(252,252,252,1) 0%,rgba(224,224,224,1) 100%); /* W3C */
 }
 
-.button:active,
+button:active,
 a.btn:active,
 a.btn:visited:active,
 a.button:active,
@@ -62,10 +62,10 @@ input[type="reset"]:active,
 input[type="button"]:active{-webkit-box-shadow:inset 0 3px 5px rgba(0,0,0,0.2),inset 0 -10px 20px rgba(0,0,0,0.07);-moz-box-shadow:inset 0 3px 5px rgba(0,0,0,0.2),inset 0 -10px 20px rgba(0,0,0,0.07);box-shadow:inset 0 3px 5px rgba(0,0,0,0.2),inset 0 -10px 20px rgba(0,0,0,0.07);}
 button[disabled],.disabled:active{-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;}
 
-.button,
+button,
 input[type="submit"],
 input[type="reset"],
-input[type="button"]{padding:5px 10px; *padding:7px 15px;}/*IE 7 ONLY*/
+input[type="button"]{*padding:7px 15px;}/*IE 7 ONLY*/
 
 	a.btn,a.button{}/*overrides*/
 	button.small, a.btn.small, a.button.small{font-size:0.8em;padding:5px 10px;}
@@ -74,7 +74,7 @@ input[type="button"]{padding:5px 10px; *padding:7px 15px;}/*IE 7 ONLY*/
 	button.disabled, a.btn.disabled, a.button.disabled{color:#ccc;cursor:default;background:#efefef;}
 	button.disabled:hover, a.btn.disabled:hover, a.button.disabled:hover{border:1px solid #ccc;background:#efefef;}
 
-	.button:hover,
+	button:hover,
 	a.btn:hover,
 	a.button:hover,
 	input[type="submit"]:hover,

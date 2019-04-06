@@ -1,35 +1,18 @@
 <h2>Add Lesson</h2>
-
 <form id="regForm" method="post" action="/instructors/classes/{{class_id}}/lessons/new">
-  <div>
-    <label>Lesson Number: </label>
-    <input type="text" name="lesson_number">
-  </div>
-  <div>
-    <label>Lesson Title: </label>
-    <input type="text" name="lesson_title">
-  </div>
-  <div>
-    <label>Lesson Body: </label>
-    <textarea  name="lesson_body"></textarea>
-  </div>
-  <div>
-    <input type="submit" value="Add lesson">
-  </div>
+	<div>
+		<label>Lesson Number: </label>
+		<input type="text" name="lesson_number">
+	</div><br />
+	<div>
+		<label>Lesson Title: </label>
+		<input type="text" name="lesson_title">
+	</div><br />
+	<div>
+		<label>Lesson Body: </label>
+		<textarea name="lesson_body"></textarea>
+	</div><br />
+	<div>
+		<input type="submit" value="Add Lesson">
+	</div>
 </form>
-
-
-
-{{!-- <form id="regForm" method="post" action="/instructors/classes/{{class_id}}/lessons/new/action_page.php">
-  <div>
-    
-    <input type="url" name="url" id="url"
-      placeholder="https://example.com"
-      pattern="https://.*" size="30">
-    <input type="submit">
-  </div>
-</form> --}}
-{{!-- <div>
-    <label>Lesson Video: </label>
-    <input type="file" name="video" accept="video/*">
-  </div> --}}
