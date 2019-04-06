@@ -16,16 +16,18 @@ mongoose.set('useNewUrlParser', true);
 mongoose.connect('mongodb://localhost/slearning' || process.env.MONGODB_URI);
 var db = mongoose.connection;
 
-// var MongoClient = require('mongodb').MongoClient;
+var MongoClient = require('mongodb').MongoClient;
+MongoClient.set('useNewUrlParser', true);
 
 
-// MongoClient.connect(process.env.MONGODB_URI, {useNewUrlParser: true} || 'mongodb://localhost/elearn', {useNewUrlParser: true},
-// function(err, database){
-//   if(err) throw err;
+MongoClient.connect('mongodb://localhost/slearning', process.env.MONGODB_URI,
+function(err, db){
+  if(err) throw err;
+  console.log('first listen');
 
-//   mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser: true} ||'mongodb://localhost/elearn', {useNewUrlParser: true});
-//   db = mongoose.connection;
-// });
+  mongoose.connect('mongodb://localhost/slearning', process.env.MONGODB_URI);
+  db = mongoose.connection;
+});
 
 var db = mongoose.connection;
 async = require('async');

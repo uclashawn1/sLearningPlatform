@@ -1,4 +1,4 @@
-# elearnPlatform
+# slearnPlatform
 Learning platform that will support video, doc hosting
 
 
