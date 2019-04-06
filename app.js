@@ -40,7 +40,8 @@ async = require('async');
 
 
 
-var routes = require('./routes/index');
+var routes = require('./routes');
+var index = require('./routes/index')
 var users = require('./routes/users');
 var classes = require('./routes/classes');
 var students = require('./routes/students');
