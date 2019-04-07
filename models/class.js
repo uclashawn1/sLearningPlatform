@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 
 // Class Schema
 
-var classSchema = mongoose.Schema({
+var ClassSchema = mongoose.Schema({
   title: {
     type: String
   },
@@ -21,7 +21,7 @@ var classSchema = mongoose.Schema({
   }]
 });
 
-var Class =  module.exports = mongoose.model('Class', classSchema);
+var Class =  module.exports = mongoose.model('Class', ClassSchema);
 
 // Fetch All Classes
 module.exports.getClasses = function(callback, limit){
@@ -42,16 +42,14 @@ module.exports.addLesson = function(info, callback){
     url           = info['url'];
     video         = info['video'];
 
-    Class.findByIdAndUpdate(class_id,{
-        $push:{"lessons": {
+    Class.findByIdAndUpdate(
+      class_id,
+      {$push:{"lessons":{
           lesson_number: lesson_number,
           lesson_title: lesson_title,
           lesson_body: lesson_body,
           url: url,
-          video: video
-        }}
-    }, {
-        safe: true,
-        upsert:true
-    }, callback);
+          video: video}}},
+      {safe: true, upsert:true},
+      callback);
 };

@@ -51,7 +51,7 @@ module.exports.register = function(info, callback){
         class_id: class_id,
         class_title: class_title
       }}},
-      {save: true, upsert: true},
+      {safe: true, upsert: true},
       callback
     );
 };

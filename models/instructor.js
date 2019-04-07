@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 
 // Instructor Schema
-var instructorSchema = mongoose.Schema({
+var InstructorSchema = mongoose.Schema({
   first_name: {
     type: String
   },
@@ -22,11 +22,11 @@ var instructorSchema = mongoose.Schema({
   },
   classes:[{
     class_id:{type: [mongoose.Schema.Types.ObjectId]},
-    class_title:{type: String},
+    class_title:{type: String}
   }]
 });
 
-var Instructor =  module.exports = mongoose.model('instructor', instructorSchema);
+var Instructor =  module.exports = mongoose.model('instructor', InstructorSchema);
 
 
 // Fetch Single Class
@@ -51,7 +51,7 @@ module.exports.register = function(info, callback){
         class_id: class_id,
         class_title: class_title
       }}},
-      {save: true, upsert: true},
+      {safe: true, upsert: true},
       callback
     );
 };

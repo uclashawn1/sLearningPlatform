@@ -19,33 +19,42 @@
 <li><a href="/classes">Classes</a></li>
 </ul>
 
-<div class="grid">
+
 
 <!-- ===================================== END HEADER ===================================== -->
+<!-- Menu Horizontal -->
 
+<div class="grid">
 <div class="col_12">
 	<div class="col_9">
-		{{{messages}}}
-			{{#if errors}}
-				{{#each errors}}
-					<div class="notice error"><i class="icon-remove-sign icon-large"></i>
-						{{msg}}
-						<a href="#close" class="icon-remove"></a>
-					</div>
-				{{/each}}
-			{{/if}}
+		{{#if success_msg}}
+			<div class="notice success"><i class="icon-remove-sign icon-large"></i> {{success_msg}}
+				<a href="#close" class="icon-remove"></a>
+			</div>
+		{{/if}}
+
+		{{#if error_msg}}
+			<div class="notice error"><i class="icon-remove-sign icon-large"></i> {{error_msg}}
+				<a href="#close" class="icon-remove"></a>
+			</div>
+		{{/if}}
+
+		{{#if error}}
+			<div class="notice error"><i class="icon-remove-sign icon-large"></i> {{error}}
+				<a href="#close" class="icon-remove"></a>
+			</div>
+		{{/if}}
 		{{{body}}}
 	</div>
-
+	
 	<div class="col_3">
 		{{>login}}
 	</div>
-
+	
 	<hr />
-
-	{{#if isHome}}
+	
 		{{>classes}}
-	{{/if}}
+	
 </div>
 
 </div><!-- END GRID -->

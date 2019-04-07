@@ -25,7 +25,6 @@
     "express-session": "*",
     "express-validator": "*",
     "handlebars": "*",
-    "jade": "*",
     "mongodb": "*",
     "mongoose": "^5.4.22",
     "morgan": "*",
