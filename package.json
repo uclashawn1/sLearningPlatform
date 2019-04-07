@@ -1,6 +1,6 @@
 {
   "name": "slearning",
-  "version": "0.0.0",
+  "version": "1.2.0",
   "private": true,
   "scripts": {
     "web": "npm start",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/uclashawn1/sLearningPlatform.git"
+    "url": "https://github.com/uclashawn1/sLearningPlatform.git"
   },
   "engines": {
     "node": "~10.15.3"
