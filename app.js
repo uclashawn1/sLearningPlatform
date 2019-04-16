@@ -1,4 +1,5 @@
 var express = require('express');
+require('dotenv').config();
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -12,7 +13,7 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var mongodb = require('mongodb');
 var MongoClient = require('mongodb').MongoClient;
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
 // MongoClient.connect('mongodb://localhost/slearning', {useNewUrlParser: true}, function(err){
 //   if(err) throw err;

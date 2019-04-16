@@ -56,4 +56,6 @@ function ensureAuthenticated(req, res, next){
 
 module.exports = router;
 
+// changed /classes to /views for router.get functions in order to fixed 404 post not working 4/8/19
+// changed back
 

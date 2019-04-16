@@ -20,6 +20,7 @@
     "connect-flash": "*",
     "cookie-parser": "*",
     "debug": "^4.1.1",
+    "dotenv": "^7.0.0",
     "env-node": "^1.0.0",
     "express": "*",
     "express-handlebars": "*",
