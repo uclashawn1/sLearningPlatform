@@ -15,22 +15,22 @@ var mongodb = require('mongodb');
 var MongoClient = require('mongodb').MongoClient;
 const mongoose = require('mongoose');
 
-// MongoClient.connect('mongodb://localhost/slearning', {useNewUrlParser: true}, function(err){
-//   if(err) throw err;
-//   // db = mongoose.connection;
-//   mongoose.connect('mongodb://localhost/slearning' || process.env.MONGODB_URI, {useNewUrlParser: true}, (err) => {
-//     if(err) {
-//       console.error(err);
-//     } else {
-//       console.log('connected');
-//     }
-//   });
-//   console.log("Listening Now");
-        // useMongoClient
-// });
+MongoClient.connect('mongodb://localhost/slearning', {useNewUrlParser: true}, function(err){
+  if(err) throw err;
+  // db = mongoose.connection;
+  mongoose.connect('mongodb://localhost/slearning' || process.env.MONGODB_URI, {useNewUrlParser: true}, (err) => {
+    if(err) {
+      console.error(err);
+    } else {
+      console.log('connected');
+    }
+  });
+  console.log("Listening Now");
+        useMongoClient
+});
 
-mongoose.connect('mongodb://localhost/slearning' || process.env.MONGODB_URI, { useNewUrlParser: true });
-console.log("Listening Now");
+// mongoose.connect('mongodb://localhost/slearning' || process.env.MONGODB_URI, { useNewUrlParser: true });
+// console.log("Listening Now");
 // can clean the above code with this structure. seek help for implementation
 
 db = mongoose.connection;
